@@ -26,6 +26,9 @@ void koch2(Turtle *t, float length, int level){
   
 }
 
+void fractalTree(Turtle *, int , int):
+
+
 
 int main(void){
   TurtleApp *app = turtleAppCreate(400, 200, "Test Line");
