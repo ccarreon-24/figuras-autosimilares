@@ -26,7 +26,9 @@ void koch2(Turtle *t, float length, int level){
   
 }
 
-void fractalTree(Turtle *, int , int):
+void fractalTree(Turtle *, int , int){
+  if(depht == 0)
+}
 
 
 
