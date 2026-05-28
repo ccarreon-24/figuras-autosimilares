@@ -4,13 +4,13 @@ void fractalTree(Turtle *t, int length, int depth){
   if(depth == 0 || length < 6)
 		return ;
 	turtleForward(t, length);
-	turtleLeft(t, 20);
+	turtleLeft(t, 30);
 	fractalTree(t, length/2, depth - 1);
 
-	turtleRight(t, 40);
+	turtleRight(t, 60);
 	fractalTree(t, length/2, depth - 1);
 
-	turtleLeft(t, 20);
+	turtleLeft(t, 30);
 	turtleBackward(t, length);
 }
 
