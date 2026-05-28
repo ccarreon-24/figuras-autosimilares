@@ -1,33 +1,17 @@
 #include "../turtlec.h"
 
-void koch(Turtle *t, float length, int level){
-  if(level == 0){
-    turtleForward(t, length);
-    return ;
-  }
-  koch(t, length/3.00, level - 1);
-  turtleLeft(t, 60);
-  koch(t, length/3.00, level - 1);
-  turtleRight(t, 120);
-  koch(t, length/3.00, level - 1);
-  turtleLeft(t, 60);
-  koch(t, length/3.00, level -1);
-}
+void fractalTree(Turtle *t, int length, int depth){
+  if(depth == 0 || length < 6)
+		return ;
+	turtleForward(t, length);
+	turtleLeft(t, 30);
+	fractalTree(t, length/2, depth - 1);
 
-void koch2(Turtle *t, float length, int level){
-  if(level == 0){
-    turtleForward(t, length);
-    turtleRight(t, 120);
-    turtleForward(t, length);
-    turtleRight(t, 120);
-    turtleForward(t, length);
-    return ;
-  }
-  
-}
+	turtleRight(t, 60);
+	fractalTree(t, length/2, depth - 1);
 
-void fractalTree(Turtle *, int , int){
-  if(depht == 0)
+	turtleLeft(t, 30);
+	turtleBackward(t, length);
 }
 
 
@@ -46,10 +30,8 @@ int main(void){
 
   turtleSetColor(t, 255, 100, 0);
   turtleSetSpeed(t, 5.0f);
-//  turtleForward(t, 300.0f);
-//  koch(t, 100, 4);
-  koch2(t, 100, 0);
-  turtleAppRun(app);
+	fractalTree(t, 100, 4);
+	turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
 }
