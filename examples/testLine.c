@@ -1,5 +1,5 @@
 #include "../turtlec.h"
-
+#include <math.h>
 void fractalTree(Turtle *t, int length, int depth){
   if(depth == 0 || length < 6)
 		return ;
@@ -27,9 +27,9 @@ void levy(Turtle *t, float length, int depth){
 		return ;
 	}
 	turtleLeft(t, 45);
-	levy(t, length * 0.8, depth - 1);
+	levy(t, length / sqrt(2), depth - 1);
 	turtleRight(t, 90);
-	levy(t, length * 0.8, depth - 1);
+	levy(t, length / sqrt(2), depth - 1);
 	turtleLeft(t, 45);
 }
 
@@ -48,7 +48,7 @@ int main(void){
   turtleSetColor(t, 255, 100, 0);
   turtleSetSpeed(t, 8.0f);
 //	fractalTree(t, 80, 6);
-	levy(t, 100, 1);
+	levy(t, 100, 5);
 	turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
