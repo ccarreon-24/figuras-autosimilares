@@ -3,7 +3,7 @@
 void fractalTree(Turtle *t, int length, int depth){
   if(depth == 0 || length < 6)
 		return ;
-	if(depth > 1){
+	if(depth > 3){
 		turtleSetColor(t, 120, 70, 20);
 	}
 	else
@@ -16,8 +16,9 @@ void fractalTree(Turtle *t, int length, int depth){
 	fractalTree(t, length * 0.7, depth - 1);
 
 	turtleLeft(t, 30);
+	if(depth > 3)
+		turtleSetColor(t, 120, 70 ,20);
 	turtleBackward(t, length);
-	turtleSetColor(t, 120, 70, 20);
 }
 
 
