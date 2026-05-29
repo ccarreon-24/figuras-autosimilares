@@ -17,6 +17,7 @@ void fractalTree(Turtle *t, int length, int depth){
 
 	turtleLeft(t, 30);
 	turtleBackward(t, length);
+	turtleSetColor(t, 120, 70, 20);
 }
 
 
